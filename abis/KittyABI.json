@@ -1,0 +1,22 @@
+[{
+    "anonymous": false,
+    "inputs": [{
+        "indexed": false,
+        "name": "owner",
+        "type": "address"
+    }, {
+        "indexed": false,
+        "name": "matronId",
+        "type": "uint256"
+    }, {
+        "indexed": false,
+        "name": "sireId",
+        "type": "uint256"
+    }, {
+        "indexed": false,
+        "name": "cooldownEndBlock",
+        "type": "uint256"
+    }],
+    "name": "Pregnant",
+    "type": "event"
+}]
