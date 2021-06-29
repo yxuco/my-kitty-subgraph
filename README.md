@@ -35,14 +35,25 @@ psql -U postgres graph-node
   \q
 ```
 
-Start local graph-node:
+Start local graph-node using infura.io:
 
-```
+```bash
 cd ../graph-node
 cargo run -p graph-node --release -- \
   --postgres-url postgresql://postgres:postgres@localhost:5432/graph-node \
   --ethereum-rpc mainnet:https://mainnet.infura.io/v3/<infura-project-id> \
   --ipfs https://ipfs.infura.io:5001
+```
+
+or using local geth node:
+
+```bash
+geth --syncmode fast --datadir ./data --http --ws --cache 1024
+cargo run -p graph-node --release -- \
+  --postgres-url postgresql://postgres:postgres@localhost:5432/graph-node \
+  --ethereum-rpc mainnet:http://127.0.0.1:8545 \
+  --ipfs https://ipfs.infura.io:5001 \
+  --debug
 ```
 
 Install graph-cli for subgraph management commands:
